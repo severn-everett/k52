@@ -1,6 +1,7 @@
-package com.severett
+package com.severett.k52
 
-import com.severett.plugins.*
+import com.severett.k52.plugins.configureRouting
+import com.severett.k52.plugins.configureSerialization
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*

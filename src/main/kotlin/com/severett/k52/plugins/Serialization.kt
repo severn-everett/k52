@@ -1,4 +1,4 @@
-package com.severett.plugins
+package com.severett.k52.plugins
 
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
