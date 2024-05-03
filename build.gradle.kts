@@ -28,12 +28,17 @@ repositories {
 }
 
 dependencies {
+    val ktorVersion: String by project
     val logbackVersion: String by project
+    implementation("ch.qos.logback:logback-classic:$logbackVersion")
+    implementation("io.github.oshai:kotlin-logging:6.0.9")
+    implementation("io.insert-koin:koin-ktor:$ktorVersion")
+    implementation("io.insert-koin:koin-logger-slf4j:$ktorVersion")
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
+    implementation("io.ktor:ktor-server-resources")
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
-    implementation("ch.qos.logback:logback-classic:$logbackVersion")
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 }
