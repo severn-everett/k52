@@ -59,7 +59,7 @@ class TransactionService {
             sum = sum,
             avg = avg,
             min = min ?: BigDecimal.ZERO,
-            max = max?: BigDecimal.ZERO,
+            max = max ?: BigDecimal.ZERO,
             count = count,
         )
     }

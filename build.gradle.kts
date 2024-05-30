@@ -6,6 +6,10 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.23"
 }
 
+repositories {
+    mavenCentral()
+}
+
 group = "com.severett"
 version = "0.0.1"
 
@@ -23,11 +27,12 @@ kotlin {
     }
 }
 
-repositories {
-    mavenCentral()
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
 }
 
 dependencies {
+    val kotestVersion: String by project
     val ktorVersion: String by project
     val logbackVersion: String by project
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
@@ -40,5 +45,6 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
     testImplementation("io.ktor:ktor-server-tests-jvm")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
+    testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
+    testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
 }
