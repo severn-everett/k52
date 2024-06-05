@@ -18,10 +18,6 @@ fun Application.configureRouting() {
     val transactionService by inject<TransactionService>()
 
     routing {
-        get("/") {
-            call.respondText("Hello World!")
-        }
-
         get("/statistics") {
             call.respond(transactionService.getStatistics())
         }

@@ -16,7 +16,7 @@ class TransactionStatisticsTest : FunSpec({
                 min = BigDecimal.valueOf(-155.251),
                 count = 10L
             ),
-            second = """{"sum":1234.5678,"avg":43.455,"min":-155.251,"max":1000.0,"count":10}""",
+            second = """{"sum":1234.57,"avg":43.46,"min":-155.26,"max":1000.0,"count":10}""",
         ),
         Pair(
             first = TransactionStatistics(

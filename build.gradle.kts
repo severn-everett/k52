@@ -32,6 +32,7 @@ tasks.withType<Test>().configureEach {
 }
 
 dependencies {
+    val koinVersion: String by project
     val kotestVersion: String by project
     val ktorVersion: String by project
     val logbackVersion: String by project
@@ -44,7 +45,8 @@ dependencies {
     implementation("io.ktor:ktor-server-resources")
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
-    testImplementation("io.ktor:ktor-server-tests-jvm")
+    testImplementation("io.insert-koin:koin-test:$koinVersion")
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
+    testImplementation("io.ktor:ktor-server-tests-jvm")
 }
